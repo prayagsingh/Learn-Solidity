@@ -1,6 +1,6 @@
 // try cryptozombies here: https://cryptozombies.io/en/lesson/1/chapter/1
 
-pragma solidity >=0.5.0 <0.6.0;
+pragma solidity ^0.8.5;
 
 contract ZombieFactory {
 
@@ -34,7 +34,7 @@ contract ZombieFactory {
     // so we'll want it to be public.
     Zombie[] public zombies;
 
-    // Note that we're specifying the function visibility as public(changed to private).
+    // Note that we're specifying the function visibility as public(changed to private later).
     // We're also providing instructions about where the _name variable should be stored- in memory.
     // This is required for all reference types such as arrays, structs, mappings, and strings.
     
@@ -56,7 +56,8 @@ contract ZombieFactory {
     
     function _createZombie(string memory _name, uint _dna) private {
         // pushing to Zombie struct array. Note that array.push() adds something to the end of the array, so the elements are in the order we added them
-        uint id = zombies.push(Zombie(_name, _dna)) - 1;
+        zombies.push(Zombie(_name, _dna));
+        uint id = zombies.length - 1;
         emit NewZombie(id, _name, _dna);
     }
   
