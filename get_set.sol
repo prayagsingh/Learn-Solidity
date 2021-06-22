@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-// specfies the version of solidity that our code is going to use. make sure to use a specific version only(use ^0.9.0).
+// specfies the version of solidity that our code is going to use. make sure to use a specific version only(use 0.9.0).
 pragma solidity >=0.7.0 <0.9.0;
 
 // defines new contract that will have some number of methods or variables. similar to class in java or python
